@@ -2,15 +2,13 @@ import React from 'react';
 
 const raceday = (props) => {
     return (
-        <div>
             <tr>
                 <td>{props.data.place}</td> 
-                <td>{props.data.name}</td>
-                <td>{props.data.skip}</td>
-                <td>{props.data.odds}</td>
+                <td style={{textAlign:"left"}}>{props.data.name}</td>
+                <td style={{textAlign:"left"}}>{props.data.skip}</td>
+                <td style={{textAlign:"right"}}>{props.data.odds}</td>
                
             </tr>
-        </div>
     )
 }
 export default raceday;

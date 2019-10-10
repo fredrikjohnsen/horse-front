@@ -25,17 +25,24 @@ class Race extends Component {
     render () {
         let myRaces = null;
         if (this.state.dataLoaded) {
-            myRaces = this.races.map (race => <div>
-                <table>
-                    <tbody> <Raceday data ={race} /></tbody> 
-            </table>
-                
-            </div>)
+            myRaces = this.races.map (race =>
+               
+                    <Raceday data ={race} ></Raceday>)
         }
         return  <div>
-            <button onClick={this.clickHandler}>Click me</button>
+            <button onClick={ this.clickHandler }>Click this</button>
             <div>
+            <table>
+                    <thead>
+                        <th>Place</th>
+                        <th>Name</th>
+                        <th>Skip</th>
+                        <th>Odds</th>
+                    </thead>
+                    <tbody>
                {myRaces}
+               </tbody>
+               </table>
             </div>
             </div>
     }
