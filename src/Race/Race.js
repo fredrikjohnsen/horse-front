@@ -7,9 +7,11 @@ class Race extends Component {
         dataLoaded : false
     };
     races = [];
+    track = 'Biri-Travbane';
+    day = '20180323';
 
     componentDidMount() {
-        fetch('http://localhost:5000/race/1?track=Biri-Travbane&day=20180323')
+        fetch('http://localhost:5000/race/1?track=' + this.track + '&day=' + this.day)
         .then(res => res.json())
         .then(data => { 
             this.races = data;
@@ -27,9 +29,7 @@ class Race extends Component {
         if (this.state.dataLoaded) {
             myRaces = this.races.map( race => <Raceday data ={race} ></Raceday> )
         }
-        return  
-            <div>
-                <button onClick={ this.clickHandler }>Show/Hide</button>
+        return  <div>
                 <div>
                     <table>
                         <thead>
@@ -43,6 +43,7 @@ class Race extends Component {
                         </tbody>
                     </table>
                 </div>
+                <button onClick={ this.clickHandler }>Show/Hide</button>
             </div>
     }
    
